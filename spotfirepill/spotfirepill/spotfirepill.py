@@ -30,9 +30,15 @@ class SpotFire:
                 self.auth_token = r.json()
                 self.auth_token = self.auth_token['access_token']
                 return self.auth_token
-        except Exception as e:
-            return e
-            exit(0)
+            else:
+                raise  Exception
+        except requests.exceptions.ConnectionError as e:
+            return self.base_url+" Its not valid one. Check the URL"
+
+        except Exception:
+
+            return f'{r.status_code} Invalid reposponse code. Check the Client ID & Secret'
+
 
     def start_library(self, *args):
         self.login()
@@ -45,11 +51,13 @@ class SpotFire:
         }
         try:
             self.r = requests.post(self.base_url + '/spotfire/api/rest/as/job/start-library', headers=header_gs, data=data_get)
-            self.return_job_id = self.r.json()['JobId']
-            return self.return_job_id
+            if self.r.status_code == 200:
+                self.return_job_id = self.r.json()['JobId']
+                return self.return_job_id
+            else:
+                raise Exception
         except Exception as e:
-            return e
-            exit(0)
+            return f'{e} JoB Id doesnt Exists'
 
     def get_status(self, *args):
         self.login()
@@ -61,8 +69,7 @@ class SpotFire:
             r = requests.get(self.base_url + f'/spotfire/api/rest/as/job/status/{args[0]}', headers=header_gs)
             return r.json()['StatusCode']
         except Exception as e:
-            return e
-            exit(0)
+            return f'{e} Job Id doesnt exists for this Job'
 
 
 
