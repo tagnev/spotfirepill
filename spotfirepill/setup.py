@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spotfirepill",
-    version="0.11",
+    version="0.12",
     author="Vengat",
     author_email="tagnev.vengat@gmail.com",
     description="This will use spotfire REST API end points to login & execute the jobs",
     long_description="using this package, we can execute the existing the  Spofire Automation jobs and check the status",
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/tagnev/spotfirepill",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
