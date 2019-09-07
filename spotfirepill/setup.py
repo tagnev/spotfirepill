@@ -5,11 +5,32 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spotfirepill",
-    version="0.12",
+    version="0.13",
     author="Vengat",
     author_email="tagnev.vengat@gmail.com",
     description="This will use spotfire REST API end points to login & execute the jobs",
-    long_description="using this package, we can execute the existing the  Spofire Automation jobs and check the status",
+    long_description="""sing Spotfire class. Create the object to instantiate the spotfire class.
+        And then login using "Client Id" & "Client Secret" to execute the jobs & check the status.
+
+        If you face any issue, kindly droup out the issue to tagnev.vengat@gmail.com
+
+        Example
+        -------
+
+        pip install spotfirepill
+
+        import spotfirepill as spt
+        spot_fire_instance = spt.SpotFire(base_url,client_id,client_secret)
+        spot_fire_instance.login()
+
+
+        # Execute the Job
+        spot_fire_instance.start_library('{job_id}')
+        it returns job execution id
+
+        #Get the Status
+
+        spot_fire_instance.get_status('{job execution id}')""",
     long_description_content_type="text/markdown",
     url="https://github.com/tagnev/spotfirepill",
     packages=setuptools.find_packages(),

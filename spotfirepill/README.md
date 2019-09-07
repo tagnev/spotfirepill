@@ -1,6 +1,3 @@
-
-This is a simple example package. You can use
-
 Using Spotfire class. Create the object to instantiate the spotfire class.
 And then login using "Client Id" & "Client Secret" to execute the jobs & check the status.
 
