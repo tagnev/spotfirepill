@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spotfirepill",
-    version="0.0.9",
+    version="0.10",
     author="Vengat",
     author_email="tagnev.vengat@gmail.com",
     description="This will use spotfire REST API end points to login & execute the jobs",

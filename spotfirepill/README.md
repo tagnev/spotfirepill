@@ -6,9 +6,20 @@ And then login using "Client Id" & "Client Secret" to execute the jobs & check t
 
 If you face any issue, kindly droup out the issue to tagnev.vengat@gmail.com
 
+Example
+-------
 
-pip install spotfire-job-api
+pip install spotfirepill
 
-import spotfire-job-api as spt
+import spotfirepill as spt
 spot_fire_instance = spt.SpotFire(base_url,client_id,client_secret)
-spot_fire_login = spot_fire_instance.login()
+spot_fire_instance.login()
+
+
+# Execute the Job
+spot_fire_instance.start_library('{job_id}')
+it returns job execution id
+
+#Get the Status
+
+spot_fire_instance.get_status('{job execution id}')
