@@ -1,7 +1,6 @@
 Using Spotfire class. Create the object to instantiate the spotfire class.
 And then login using "Client Id" & "Client Secret" to execute the jobs & check the status.
 
-If you face any issue, kindly droup out the issue to tagnev.vengat@gmail.com
 
 Example
 -------

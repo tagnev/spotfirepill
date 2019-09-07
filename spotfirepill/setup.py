@@ -5,14 +5,14 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spotfirepill",
-    version="0.13",
+    version="0.14",
     author="Vengat",
     author_email="tagnev.vengat@gmail.com",
     description="This will use spotfire REST API end points to login & execute the jobs",
-    long_description="""sing Spotfire class. Create the object to instantiate the spotfire class.
+    long_description="""Using Spotfire class. Create the object to instantiate the spotfire class.
         And then login using "Client Id" & "Client Secret" to execute the jobs & check the status.
 
-        If you face any issue, kindly droup out the issue to tagnev.vengat@gmail.com
+
 
         Example
         -------
